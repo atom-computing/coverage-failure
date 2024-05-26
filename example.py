@@ -7,14 +7,14 @@ async def run():
         raise RuntimeError("This is a test exception.")
 
     async def return_false():
-        # simply returning false here causes the incorrectly missed line to be marked as hit
+        # simply returning false eliminates the issue
         try:
             await asyncio.to_thread(raise_exception)
-            # raise RuntimeError("This is a test exception.")  # doing this instead will cause line below to show up
+            # raise RuntimeError("This is a test exception.")  # doing this instead eliminates the issue
         finally:
             return False
 
-    # remove this conditional also fixes the problem
+    # removing this conditional also eliminates the issue
     if await return_false():
         return False
 
