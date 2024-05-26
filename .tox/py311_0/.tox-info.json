@@ -1,0 +1,6 @@
+{
+  "ToxEnv": {
+    "name": "py311_0",
+    "type": "VirtualEnvRunner"
+  }
+}
