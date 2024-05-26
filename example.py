@@ -18,7 +18,7 @@ async def run():
     if await return_false():
         return False
 
-    await asyncio.to_thread(print, "hello",)  # this line is incorrectly marked as missing in the coverage report
+    await asyncio.to_thread(print, "hello")  # this line is incorrectly marked as missing in the coverage report
 
 
 if __name__ == '__main__':
